@@ -1,0 +1,22 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ title | uppercase }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ subtitle }}
+    </mat-card-subtitle>
+    <span>{{ date | date : "dd/MM/yyyy" }}</span>
+    <span>{{ salary | currency }}</span>
+    <span>{{ object | json }}</span>
+  </mat-card-header>
+  <mat-card-actions>Actions</mat-card-actions>
+  <mat-card-content>
+    {{ content | reverse }}
+    <input [disabled]="isDisabled" type="checkbox" /><br />
+    <!-- <input
+      type="text"
+      [placeholder]="title"
+      (keyup)="changeTitleFromInput($event)" /><br /> -->
+    <button (click)="changeTitle()">Click me</button>
+    <input type="text" [placeholder]="title" [(ngModel)]="title" /><br />
+  </mat-card-content>
+</mat-card>
